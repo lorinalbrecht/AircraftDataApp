@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AircraftDataApp.Models.Aircraft>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Aircrafts</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Registration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AircraftType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Airline)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Registration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AircraftType.TypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airline.AirlineName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAircraft">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdAircraft">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAircraft">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

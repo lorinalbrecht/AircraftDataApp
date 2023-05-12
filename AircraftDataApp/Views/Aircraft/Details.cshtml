@@ -1,0 +1,62 @@
+﻿@model AircraftDataApp.Models.Aircraft
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Aircraft</h4>
+    <dl class="row">
+        <hr />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Registration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Registration)
+        </dd>
+        <hr />
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AircraftType.Manufacturer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AircraftType.Manufacturer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AircraftType.TypeName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AircraftType.TypeName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AircraftType.MaxWeight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AircraftType.MaxWeight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AircraftType.Range)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AircraftType.Range)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Airline)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Airline.AirlineName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Airline.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Airline.Country)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdAircraft">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
